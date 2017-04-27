@@ -3,7 +3,8 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
-var htmlRoutes = require("./app/routing/htmlRoutes")
+var htmlRoutes = require("./app/routing/htmlRoutes");
+var apiRoutes = require("./app/routing/apiRoutes");
 
 // Sets up the Express App
 // =============================================================
@@ -24,6 +25,9 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // =============================================================
 // connecting with the htmlRoutes page, calling the htmlRoutes and app argument
 htmlRoutes(app);
+// friends(app);
+
+
 // Basic route that sends the user first to the AJAX Page
 // I moved this to the htmlRoutes.js file
 // app.get("/", function(req, res) {
