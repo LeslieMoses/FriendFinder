@@ -3,7 +3,9 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
+// connecting with htmlRoutes page via require
 var htmlRoutes = require("./app/routing/htmlRoutes");
+// connecting with apiRoutes page via require
 var apiRoutes = require("./app/routing/apiRoutes");
 
 // Sets up the Express App
@@ -26,6 +28,7 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // connecting with the htmlRoutes page, calling the htmlRoutes 
 // and app argument
 htmlRoutes(app);
+// calling function from apiRoutespage
 apiRoutes(app);
 
 
