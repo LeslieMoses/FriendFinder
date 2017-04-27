@@ -23,9 +23,10 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Routes
 // =============================================================
-// connecting with the htmlRoutes page, calling the htmlRoutes and app argument
+// connecting with the htmlRoutes page, calling the htmlRoutes 
+// and app argument
 htmlRoutes(app);
-// friends(app);
+apiRoutes(app);
 
 
 // Basic route that sends the user first to the AJAX Page
