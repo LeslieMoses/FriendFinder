@@ -1,85 +1,46 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>Find your peeps</title>
+    <title>FriendFinder</title>
+
     <!-- Latest compiled and minified CSS & JS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <!--jquery link-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery.js"></script>
-    <!--bootstrap link-->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <!-- Font Awesome Glyphicons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
 </head>
 
-<body>
+<body waid71fa0d88-5390-4b5b-a2f4-e45fa93d85e2="SA password protect entry checker">
 
     <div class="container">
+
         <div class="jumbotron">
-            <h1>Find yo' friends</h1>
-            <h3>The greatest resource for connectivity!</h3>
+            <h1 class=""><i class="fa fa-facebook-square" aria-hidden="true"></i> Friend Finder: Find your tribe</h1>
             <hr>
-            <a href="/add"><button type="button" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-plus"></span> Add New Character</button></a>
-        </div>
-        <div class="row">
+            <h2 class="">Answer basic questions </h2>
+            <h2 class="">Find the friend with the greatest compatibility!</h2>
+            <br>
 
-            <div class="col-lg-12">
-
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title"><strong>Character Search</strong></h3>
-                    </div>
-                    <div class="panel-body">
-                        <input type="text" id="character-search" class="form-control">
-                        <br>
-                        <div class="text-right">
-                            <button type="submit" class="btn btn-primary btn-md" id="search-btn"><span class="glyphicon glyphicon-search"></span> Search Your Feelings. You know it is true.</button>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title"><strong>Character Statistics</strong></h3>
-                    </div>
-                    <div class="panel-body">
-                        <div class="well">
-                            <h2 id="name">Yoda</h2>
-                            <div id="stats">
-                                <h3><strong>Role:</strong> <span id="role">Jedi Master</span></h3>
-                                <h3><strong>Age:</strong> <span id="age">900</span></h3>
-                                <h3><strong>Force Points:</strong> <span id="force-points">2000</span></h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="">
+                <a href="/survey"><button type="button" class="btn btn-lg btn-primary"><h4><span class="glyphicon glyphicon-list-alt"></span> Go to Survey</h4></button></a>
             </div>
+
         </div>
+
+        <footer class="footer">
+            <div class="container">
+                <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/afhaque/friendfinder">GitHub Repo</a></p>
+            </div>
+        </footer>
+
     </div>
 
-    <script type="text/javascript">
-        $("#search-btn").on("click", function() {
-            var searchedCharacter = $("#character-search").val().trim();
 
-            searchedCharacter = searchedCharacter.replace(/\s+/g, "").toLowerCase();
 
-            $.get("/api/" + searchedCharacter, function(data) {
-                console.log(data);
-                if (data) {
-                    $("#stats").show();
-                    $("#name").text(data.name);
-                    $("#role").text(data.role);
-                    $("#age").text(data.age);
-                    $("#force-points").text(data.forcePoints);
-                } else {
-                    $("#name").text("The force is not strong with this one. Your character was not found.");
-                    $("#stats").hide();
-                }
-            });
-        });
-    </script>
 </body>
 
 </html>

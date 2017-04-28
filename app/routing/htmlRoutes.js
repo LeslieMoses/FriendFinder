@@ -11,11 +11,11 @@ module.exports = function(app) {
         res.sendFile(path.join(__dirname, "../public/home.html"));
     });
 
-    // trying other stuff
-    app.get('/blocks', function(req, res) {
-        var blocks = "<ul><li>fixed</li><li>movable</li></ul>"
+    // // trying other stuff
+    // app.get('/blocks', function(req, res) {
+    //     var blocks = "<ul><li>fixed</li><li>movable</li></ul>"
 
-    });
+    // });
 
     // do i need more direct path to this folder? ../public/
     app.get("/survey", function(req, res) {

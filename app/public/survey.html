@@ -140,7 +140,7 @@
 
 
         <h3><strong>Question 9</strong></h3>
-        <h4>You think that everyone’s views should be respected if they're expressed tersely and with great wit.</h4>
+        <h4>You think everyone’s views should be respected if expressed tersely and with great wit.</h4>
         <select data-placeholder="" class="chosen-select" id="q9">
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -228,12 +228,13 @@
             function validateForm() {
                 var isValid = true;
                 $('.form-control').each(function() {
+                    // if nothing entered, then unvalid
                     if ($(this).val() === '')
                         isValid = false;
                 });
 
                 $('.chosen-select').each(function() {
-
+                    // if nothing entered, then unvalid
                     if ($(this).val() === "")
                         isValid = false
                 })
@@ -248,7 +249,6 @@
                     photo: $("#photo").val(),
                     scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(), ]
                 }
-
 
                 // Grab the URL of the website
                 var currentURL = window.location.origin;
