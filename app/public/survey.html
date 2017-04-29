@@ -22,7 +22,7 @@
 
     <div class="container">
 
-        <h2>Survey Questions</h2>
+        <h2>Survey Statements</h2>
         <hr>
 
         <h3><strong>Let's talk about <span style="color:skyblue"> YOU</span></strong></h3>
@@ -34,8 +34,7 @@
 
         <hr>
 
-
-        <h3><strong>Question 1</strong></h3>
+        <h3><strong>Statement 1</strong></h3>
         <h4>You know the proper way to pick up a jellyfish without being stung.</h4>
         <select data-placeholder="" class="chosen-select" id="q1">
 	 		<option value=""></option>
@@ -53,7 +52,7 @@
             </div>
         </div>-->
 
-        <h3><strong>Question 2</strong></h3>
+        <h3><strong>Statement 2</strong></h3>
         <h4>Generally speaking, you like ketchup — but not tomatoes.</h4>
         <select data-placeholder="" class="chosen-select" id="q2">
 	 		<option value=""></option>
@@ -65,7 +64,7 @@
       	</select>
 
 
-        <h3><strong>Question 3</strong></h3>
+        <h3><strong>Statement 3</strong></h3>
         <h4>You value "old people."</h4>
         <select data-placeholder="" class="chosen-select" id="q3">
 	 		<option value=""></option>
@@ -78,8 +77,8 @@
 
 
 
-        <h3><strong>Question 4</strong></h3>
-        <h4>You find it easy to tell your someone he or she has food on their face, or their slip is showing, etc. </h4>
+        <h3><strong>Statement 4</strong></h3>
+        <h4>You find it easy to tell someone he or she has food on their face, or their slip is showing, etc. </h4>
         <select data-placeholder="" class="chosen-select" id="q4">
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -90,7 +89,7 @@
       	</select>
 
 
-        <h3><strong>Question 5</strong></h3>
+        <h3><strong>Statement 5</strong></h3>
         <h4>You like talking to strangers.</h4>
         <select data-placeholder="" class="chosen-select" id="q5">
 	 		<option value=""></option>
@@ -102,7 +101,7 @@
       	</select>
 
 
-        <h3><strong>Question 6</strong></h3>
+        <h3><strong>Statement 6</strong></h3>
         <h4>It is often difficult for you to relate to animals’ feelings, particularly psammomys gerbils.</h4>
         <select data-placeholder="" class="chosen-select" id="q6">
 	 		<option value=""></option>
@@ -115,7 +114,7 @@
 
 
 
-        <h3><strong>Question 7</strong></h3>
+        <h3><strong>Statement 7</strong></h3>
         <h4>You find it difficult to exercise immediately after eating.</h4>
         <select data-placeholder="" class="chosen-select" id="q7">
 	 		<option value=""></option>
@@ -127,7 +126,7 @@
       	</select>
 
 
-        <h3><strong>Question 8</strong></h3>
+        <h3><strong>Statement 8</strong></h3>
         <h4>You rarely get carried away by handsome men on black stallions.</h4>
         <select data-placeholder="" class="chosen-select" id="q8">
 	 		<option value=""></option>
@@ -139,7 +138,7 @@
       	</select>
 
 
-        <h3><strong>Question 9</strong></h3>
+        <h3><strong>Statement 9</strong></h3>
         <h4>You think everyone’s views should be respected if expressed tersely and with great wit.</h4>
         <select data-placeholder="" class="chosen-select" id="q9">
 	 		<option value=""></option>
@@ -151,7 +150,7 @@
       	</select>
 
 
-        <h3><strong>Question 10</strong></h3>
+        <h3><strong>Statement 10</strong></h3>
         <h4>You feel more energetic after dipping your toes in ice water.</h4>
         <select data-placeholder="" class="chosen-select" id="q10">
 	 		<option value=""></option>
@@ -256,7 +255,8 @@
                 // AJAX post the data to the friends API. 
                 $.post(currentURL + "/api/friends", userData, function(data) {
 
-                    // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+                    // Grab the result from the AJAX post so that the best match's 
+                    // name and photo are displayed.
                     $("#matchName").text(data.name);
                     $('#matchImg').attr("src", data.photo);
 

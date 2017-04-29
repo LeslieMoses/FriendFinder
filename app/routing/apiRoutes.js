@@ -2,7 +2,16 @@
 //  A GET route with the url /api/friends. This will be used
 // to display a JSON of all possible friends.
 var friendData = require("../data/friends");
+var express = require("express");
 var app = express();
+var bodyParser = require("body-parser");
+
+// Sets up the Express app to handle data parsing
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+
 
 // path and callback function that runs each time get request is called on that path
 //   takes request and response object...
@@ -20,23 +29,47 @@ module.exports = function(app) {
         // res.send(JSON.stringify(friends));
     });
 };
-// Kelly Davis' post
-// in apiRoutes:
-module.exports = variable
-for your route object
 
-    in server.js:
-    var apiRoutes = require("./routing/apiRoutes");
-app.use(apiRoutes);
 
-// from Eric Fry's work
-// app.get('/api/friends', function(req, res) {
-//     res.setHeader('Content-Type', 'application/json');
-//     res.send(JSON.stringify(tables));
-// })
+//     in server.js:
+//     var apiRoutes = require("./routing/apiRoutes");
+// app.use(apiRoutes);
+
+// Create New customers - takes in JSON input
+app.post("/api/new", function(req, res) {
+    var newCustomers = req.body;
+    //newCustomers.mobileNumber = newCustomers.name.replace(/\s+/g, "").toLowerCase();
+
+    console.log(newCustomers);
+
+    customers.push(newCustomers);
+
+    res.json(newCustomers);
+});
+
+
+// from Eric Fry's hot restaurant
+// linking code in your app.post route would be best. You should be able 
+// to add to and update the friends.js array from within that post route.
+app.post('/api/friends', function(req, res) {
+
+    var buddy = {
+        name: req.body.name,
+        photo: req.body.photo,
+        scores: req.body.scores
+    };
+    console.log(res.buddy);
+    // if (tables.length >= MAX_TABLES)
+    //     waitingList.push(reservation);
+    // else
+    //     tables.push(reservation);
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(buddy));
+});
 
 //  A POST route with /api/friends 
-// to display a JSON of all possible friends to handle incoming survey results. 
+// to display a JSON of all possible friends 
+// to handle incoming survey results. 
 // This route will also handle the compatibility logic.
 // Create New customers - takes in JSON input
 
@@ -77,14 +110,3 @@ app.use(apiRoutes);
 
 //     res.json(buddy);
 // });
-
-
-
-
-
-// Q: Am I just calling the apiRoutes.js file the same way I would call 
-// an index.html for a route? What am I missing here?
-// KELLY DAVIS:
-// in apiRoutes:
-
-// module.exports = <variable for your route object>
